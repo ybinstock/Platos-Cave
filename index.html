@@ -1,0 +1,127 @@
+<html>
+<head>
+  <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+</head>
+<style>
+  .other-work {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    margin: 1em;
+    background-color: #1b95e0;
+    z-index: 999999;
+    position: absolute;
+    right: 1em;
+  }
+
+  button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+  }
+
+</style>
+<body>
+
+<div class="">
+  <button class="other-work">
+    <a target="_blank" href="http://www.frontenddev.yonibinstock.com">See my other work</a>
+  </button>
+</div>
+
+<!--<a-scene fog="type: linear; density: .9; color: #000000; far: 30; near: 20">-->
+<a-scene>
+
+
+  <a-assets>
+    <img id="logo" src="logo.png">
+    <img id="slide1" src="shadow1.jpg">
+    <img id="slide2" src="shadow2.jpg">
+    <img id="slide3" src="shadow3.jpg">
+    <img id="slide4" src="shadow4.jpg">
+    <img id="slide5" src="shadow5.jpg">
+    <img id="slide6" src="shadow6.jpg">
+    <img id="slide7" src="shadow7.jpg">
+    <img id="slide8" src="shadow8.jpg">
+    <img id="slide9" src="shadow9.jpg">
+    <img id="slide10" src="shadow10.png">
+    <img id="cave-exit" src="cathedralcaves0113.jpg">
+  </a-assets>
+
+  <a-sky color="black"></a-sky>
+
+  <!--Shadows-->
+  <a-image id="logo" class="logo" src="#logo" position="0 2 -6" rotation="0 0 0"></a-image>
+
+  <a-image id="slide1" class="slide1" src="#slide1" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="5000" dur="5000"></a-animation>
+  </a-image>
+
+  <a-image id="slide2" class="slide2" src="#slide2" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="2 2 -26" delay="10000" dur="10000"></a-animation>
+  </a-image>
+
+  <a-image id="slide3" class="slide3" src="#slide3" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="0 0 -26" delay="15000" dur="15000"></a-animation>
+  </a-image>
+
+  <a-image id="slide4" class="slide4" src="#slide4" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="0 4 -26" delay="20000" dur="15000"></a-animation>
+  </a-image>
+
+  <a-image id="slide5" class="slide5" src="#slide5" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="25000" dur="15000"></a-animation>
+  </a-image>
+
+  <a-image id="slide6" class="slide6" src="#slide6" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="2 2 -26" delay="30000" dur="15000"></a-animation>
+  </a-image>
+
+  <a-image id="slide7" class="slide7" src="#slide7" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="0 0 -26" delay="35000" dur="15000"></a-animation>
+  </a-image>
+
+  <a-image id="slide8" class="slide8" src="#slide8" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="0 4 -26" delay="40000" dur="15000"></a-animation>
+  </a-image>
+  <a-image id="slide9" class="slide9" src="#slide9" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="45000" dur="15000"></a-animation>
+  </a-image>
+  <a-image id="slide10" class="slide10" src="#slide10" position="0 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 2 -6" to="2 2 -26" delay="50000" dur="15000"></a-animation>
+  </a-image>
+
+
+  <!--Audio-->
+
+  <!--<a-entity sound="src: ambiencecave.mp3; autoplay: true; loop: true; volume: 1;"></a-entity>-->
+  <!--<a-entity sound="src: echocave.mp3; autoplay: true; loop: true; volume: 1;"></a-entity>-->
+
+  <a-entity class="door-open" sound="src: url(door_open_audio.mp3); volume: 4;"></a-entity>
+  <a-entity class="chains-falling" sound="src: url(chains.mp3); volume: 4;"></a-entity>
+
+
+  <a-plane color="white" class="white-plane" position="0 2 -25" rotation="0 0 0" width="10" height="10" visible="true">
+  </a-plane>
+
+
+  <!--Door-->
+
+  <a-image id="cave-exit" class="cave-exit" src="#cave-exit" position="0 1.5 6" rotation="0 -180 0" visible="false"> </a-image>
+</a-scene>
+
+</body>
+<script src="app.js"></script>
+
+</html>
