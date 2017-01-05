@@ -1,0 +1,55 @@
+<html>
+<head>
+  <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+</head>
+<style>
+  .other-work {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    margin: 1em;
+    background-color: #1b95e0;
+    z-index: 999999;
+    position: absolute;
+    right: 1em;
+  }
+
+  button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+  }
+
+</style>
+<body>
+
+<div class="">
+  <button class="other-work">
+    <a target="_blank" href="http://www.frontenddev.yonibinstock.com">See my other work</a>
+  </button>
+</div>
+
+
+<a-scene>
+  <a-sky src="beach.jpg"></a-sky>
+  <a-camera wasd-controls-enabled="false"></a-camera>
+  <a-sound src="src: url(wavesound.mp3)" autoplay="true" loop="true" position="0 0 0"></a-sound>
+</a-scene>
+
+
+</body>
+
+<script src="app.js"></script>
+
+</html>

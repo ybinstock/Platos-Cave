@@ -2,7 +2,7 @@
 <head>
   <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
 </head>
 <style>
   .other-work {
@@ -40,12 +40,27 @@
   </button>
 </div>
 
-<!--<a-scene fog="type: linear; density: .9; color: #000000; far: 30; near: 20">-->
-<a-scene>
+<a-scene fog="type: linear; density: .9; color: #000000; far: 50; near: 20" cursor-listener>
+  <!--<a-scene>-->
+  <!--<a-camera class="camera" wasd-controls-enabled="false" look-controls-enabled="true">-->
+    <!-- -->
+  <!--</a-camera>-->
 
+  <a-entity id="camera" position="0 0 5">
+    <a-entity camera="active:true" universal-controls="" position="0 2.2 0" collider-check>
+      <a-entity cursor="fuse: true; timeout: 100; maxDistance: 15;"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: red" position="0 0 -2" raycaster="objects: .collidable"></a-entity>
+    </a-entity>
+  </a-entity>
+
+
+  <a-entity geometry="primitive: box" class="collidable"
+            position="1 2.5 0"></a-entity>
 
   <a-assets>
-    <img id="logo" src="logo.png">
+    <img id="curtains" src="curtains.jpg">
+    <img id="instructions" src="instructions.png">
     <img id="slide1" src="shadow1.jpg">
     <img id="slide2" src="shadow2.jpg">
     <img id="slide3" src="shadow3.jpg">
@@ -61,8 +76,9 @@
 
   <a-sky color="black"></a-sky>
 
+  <a-image src="#instructions" class="instructions" position="0 2 -4" visible="false"></a-image>
   <!--Shadows-->
-  <a-image id="logo" class="logo" src="#logo" position="0 2 -6" rotation="0 0 0"></a-image>
+  <a-image id="curtains" class="logo" src="#curtains" position="0 2 -6" scale="3 3 3" rotation="0 0 0"></a-image>
 
   <a-image id="slide1" class="slide1" src="#slide1" position="0 2 -6" rotation="0 0 0" visible="false">
     <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="5000" dur="5000"></a-animation>
@@ -105,8 +121,8 @@
 
   <!--Audio-->
 
-  <!--<a-entity sound="src: ambiencecave.mp3; autoplay: true; loop: true; volume: 1;"></a-entity>-->
-  <!--<a-entity sound="src: echocave.mp3; autoplay: true; loop: true; volume: 1;"></a-entity>-->
+  <a-entity sound="src: ambiencecave.mp3; autoplay: true; loop: true; volume: 1;"></a-entity>
+  <a-entity sound="src: echocave.mp3; autoplay: true; loop: true; volume: 1;"></a-entity>
 
   <a-entity class="door-open" sound="src: url(door_open_audio.mp3); volume: 4;"></a-entity>
   <a-entity class="chains-falling" sound="src: url(chains.mp3); volume: 4;"></a-entity>
@@ -118,10 +134,16 @@
 
   <!--Door-->
 
-  <a-image id="cave-exit" class="cave-exit" src="#cave-exit" position="0 1.5 6" rotation="0 -180 0" visible="false"> </a-image>
+  <a-image id="cave-exit" class="cave-exit" src="#cave-exit" position="0 1.5 6" rotation="0 -180 0"
+           visible="false"></a-image>
+
+
 </a-scene>
 
+
+
 </body>
+
 <script src="app.js"></script>
 
 </html>
