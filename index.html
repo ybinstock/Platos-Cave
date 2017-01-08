@@ -40,26 +40,24 @@
   </button>
 </div>
 
-<a-scene fog="type: linear; density: .9; color: #000000; far: 50; near: 20" cursor-listener>
-  <!--<a-scene>-->
-  <!--<a-camera class="camera" wasd-controls-enabled="false" look-controls-enabled="true">-->
-    <!-- -->
-  <!--</a-camera>-->
+<a-scene fog="type: linear; density: .9; color: #000000; far: 50; near: 20" >
+<!--<a-scene>-->
 
-  <a-entity id="camera" position="0 0 5">
-    <a-entity camera="active:true" universal-controls="" position="0 2.2 0" collider-check>
-      <a-entity cursor="fuse: true; timeout: 100; maxDistance: 15;"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                material="color: red" position="0 0 -2" raycaster="objects: .collidable"></a-entity>
-    </a-entity>
+  <a-entity position="0 .6 3">
+    <a-camera camera wasd-controls-enabled="false" class="camera">
+      <a-entity raycaster="far: 1; objects: .intersectable" cursor="fuse: true; fuseTimeout: 500"
+                position="0 0 -0.75"></a-entity>
+
+      <a-animation begin="click" easing="ease-in" attribute="scale"
+                   fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+      <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                   fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+    </a-camera>
   </a-entity>
 
-
-  <a-entity geometry="primitive: box" class="collidable"
-            position="1 2.5 0"></a-entity>
-
   <a-assets>
-    <img id="curtains" src="curtains.jpg">
+
+    <img id="start" src="start.jpg">
     <img id="instructions" src="instructions.png">
     <img id="slide1" src="shadow1.jpg">
     <img id="slide2" src="shadow2.jpg">
@@ -76,48 +74,40 @@
 
   <a-sky color="black"></a-sky>
 
-  <a-image src="#instructions" class="instructions" position="0 2 -4" visible="false"></a-image>
+  <a-image src="#instructions" class="instructions" position="0 2 -.5" visible="false"></a-image>
   <!--Shadows-->
-  <a-image id="curtains" class="logo" src="#curtains" position="0 2 -6" scale="3 3 3" rotation="0 0 0"></a-image>
+  <a-image id="curtains" class="logo" src="#start" position="0 2 -.5" scale="4 4 4" rotation="0 0 0"></a-image>
 
-  <a-image id="slide1" class="slide1" src="#slide1" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="5000" dur="5000"></a-animation>
+  <a-image id="slide1" class="slide1" src="#slide1" position="-2 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="-2 2 -6" to="10 2 -6" delay="5000" dur="10000"></a-animation>
   </a-image>
-
-  <a-image id="slide2" class="slide2" src="#slide2" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="2 2 -26" delay="10000" dur="10000"></a-animation>
+  <a-image id="slide2" class="slide2" src="#slide2" position="-2 5 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="-2 5 -6" to="10 2 -6" delay="10000" dur="10000"></a-animation>
   </a-image>
-
-  <a-image id="slide3" class="slide3" src="#slide3" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="0 0 -26" delay="15000" dur="15000"></a-animation>
+  <a-image id="slide3" class="slide3" src="#slide3" position="0 6 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 6 -6" to="-10 0 -10" delay="15000" dur="15000"></a-animation>
   </a-image>
-
-  <a-image id="slide4" class="slide4" src="#slide4" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="0 4 -26" delay="20000" dur="15000"></a-animation>
+  <a-image id="slide4" class="slide4" src="#slide4" position="0 5 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 5 -6" to="-4 4 -16" delay="20000" dur="15000"></a-animation>
   </a-image>
-
-  <a-image id="slide5" class="slide5" src="#slide5" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="25000" dur="15000"></a-animation>
+  <a-image id="slide5" class="slide5" src="#slide5" position="5 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="5 2 -6" to="-2 2 -16" delay="25000" dur="15000"></a-animation>
   </a-image>
-
-  <a-image id="slide6" class="slide6" src="#slide6" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="2 2 -26" delay="30000" dur="15000"></a-animation>
+  <a-image id="slide6" class="slide6" src="#slide6" position="1 1 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="1 1 -6" to="6 4 -16" delay="30000" dur="15000"></a-animation>
   </a-image>
-
-  <a-image id="slide7" class="slide7" src="#slide7" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="0 0 -26" delay="35000" dur="15000"></a-animation>
+  <a-image id="slide7" class="slide7" src="#slide7" position="0 6 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="0 6 -6" to="-3 0 -6" delay="35000" dur="15000"></a-animation>
   </a-image>
-
-  <a-image id="slide8" class="slide8" src="#slide8" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="0 4 -26" delay="40000" dur="15000"></a-animation>
+  <a-image id="slide8" class="slide8" src="#slide8" position="-2 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="-2 2 -6" to="-4 8 -6" delay="40000" dur="15000"></a-animation>
   </a-image>
-  <a-image id="slide9" class="slide9" src="#slide9" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="-2 2 -26" delay="45000" dur="15000"></a-animation>
+  <a-image id="slide9" class="slide9" src="#slide9" position="5 2 -6" rotation="0 0 0" visible="false">
+    <a-animation attribute="position" from="5 2 -6" to="-2 2 -16" delay="45000" dur="15000"></a-animation>
   </a-image>
   <a-image id="slide10" class="slide10" src="#slide10" position="0 2 -6" rotation="0 0 0" visible="false">
-    <a-animation attribute="position" from="0 2 -6" to="2 2 -26" delay="50000" dur="15000"></a-animation>
+    <a-animation attribute="position" from="0 2 -6" to="6 4 -6" delay="50000" dur="15000"></a-animation>
   </a-image>
-
 
   <!--Audio-->
 
@@ -127,19 +117,19 @@
   <a-entity class="door-open" sound="src: url(door_open_audio.mp3); volume: 4;"></a-entity>
   <a-entity class="chains-falling" sound="src: url(chains.mp3); volume: 4;"></a-entity>
 
-
-  <a-plane color="white" class="white-plane" position="0 2 -25" rotation="0 0 0" width="10" height="10" visible="true">
+  <a-plane color="white" class="white-plane" position="0 2 -15" rotation="0 0 0" width="25" height="25" visible="true">
   </a-plane>
-
 
   <!--Door-->
 
-  <a-image id="cave-exit" class="cave-exit" src="#cave-exit" position="0 1.5 6" rotation="0 -180 0"
-           visible="false"></a-image>
+  <a-image id="cave-exit" class="cave-exit intersectable" cursor-listener src="#cave-exit" position="0 1.5 10"
+           rotation="0 -180 0"
+           visible="false" onclick="location.href='/thecave/reality.html'">
+    <!--<a-animation begin="raycaster-intersected" attribute="position" from="0 1.5 6" to="0 1.5 6" dur="2000" fill="both"></a-animation>-->
+  </a-image>
 
 
 </a-scene>
-
 
 
 </body>

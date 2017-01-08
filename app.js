@@ -1,28 +1,5 @@
 $(document).ready(function() {
 
-  //
-  //AFRAME.registerComponent('cursor-listener', {
-  //  init: function () {
-  //    this.el.addEventListener('click', function (evt) {
-  //      //window.location.href = " http://localhost:63342/thecave/reality.html";
-  //
-  //      console.log('this is happening')
-  //
-  //
-  //    });
-  //  }
-  //});
-
-  //
-  AFRAME.registerComponent('collider-check', {
-    dependencies: ['raycaster'],
-    init: function () {
-      this.el.addEventListener('raycaster-intersected', function () {
-        console.log('Player hit something!');
-      });
-    }
-  });
-
 //For slide1
   function showSlide1() {
     $(".logo").attr('visible', 'false');
@@ -125,12 +102,9 @@ $(document).ready(function() {
     var door = document.querySelector('.door-open');
     door.components.sound.playSound();
     $(".cave-exit").attr('visible', 'true');
-
-
-    var camera = document.querySelector('.camera');
-    $(camera).removeAttr('wasd-controls');
-    $(camera).removeAttr('wasd-controls-enabled');
-
+    var camera = document.querySelector('[camera]');
+    //camera.setAttribute('wasd-controls-enabled');
+    camera.removeAttribute('wasd-controls-enabled');
 
   }
 
