@@ -6,7 +6,7 @@ $(document).ready(function() {
     $(".slide1").attr('visible', 'true');
   }
 
-  setTimeout(showSlide1, 5000);
+  setTimeout(showSlide1, 4000);
 
 //For slide2
   function showSlide2() {
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   }
 
-  setTimeout(showSlide2, 10000);
+  setTimeout(showSlide2, 6000);
 
 //For slide2
   function showSlide3() {
@@ -23,7 +23,7 @@ $(document).ready(function() {
     $(".slide3").attr('visible', 'true');
   }
 
-  setTimeout(showSlide3, 15000);
+  setTimeout(showSlide3, 10000);
 
 //For slide4
   function showSlide4() {
@@ -31,7 +31,7 @@ $(document).ready(function() {
     $(".slide4").attr('visible', 'true');
   }
 
-  setTimeout(showSlide4, 20000);
+  setTimeout(showSlide4, 14000);
 
 //For slide5
   function showSlide5() {
@@ -39,7 +39,7 @@ $(document).ready(function() {
     $(".slide5").attr('visible', 'true');
   }
 
-  setTimeout(showSlide5, 25000);
+  setTimeout(showSlide5, 17000);
 
   //For slide6
   function showSlide6() {
@@ -47,7 +47,7 @@ $(document).ready(function() {
     $(".slide6").attr('visible', 'true');
   }
 
-  setTimeout(showSlide6, 30000);
+  setTimeout(showSlide6, 20000);
 
 
   //For slide7
@@ -56,7 +56,7 @@ $(document).ready(function() {
     $(".slide7").attr('visible', 'true');
   }
 
-  setTimeout(showSlide7, 35000);
+  setTimeout(showSlide7, 25000);
 
 
   //For slide8
@@ -65,7 +65,7 @@ $(document).ready(function() {
     $(".slide8").attr('visible', 'true');
   }
 
-  setTimeout(showSlide8, 40000);
+  setTimeout(showSlide8, 30000);
 
   //For slide9
   function showSlide9() {
@@ -73,7 +73,7 @@ $(document).ready(function() {
     $(".slide9").attr('visible', 'true');
   }
 
-  setTimeout(showSlide9, 45000);
+  setTimeout(showSlide9, 35000);
 
   //For slide10
   function showSlide10() {
@@ -81,7 +81,7 @@ $(document).ready(function() {
     $(".slide10").attr('visible', 'true');
   }
 
-  setTimeout(showSlide10, 50000);
+  setTimeout(showSlide10, 40000);
 
   //Time to wake up
 
@@ -94,7 +94,7 @@ $(document).ready(function() {
     chains.components.sound.playSound();
   }
 
-  setTimeout(wakeUp, 55000);
+  setTimeout(wakeUp, 47000);
 
 
   function doorOpen() {
@@ -108,6 +108,6 @@ $(document).ready(function() {
 
   }
 
-  setTimeout(doorOpen, 56000)
+  setTimeout(doorOpen, 48000)
 
 });
