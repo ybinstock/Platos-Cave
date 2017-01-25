@@ -44,14 +44,14 @@
 <!--<a-scene>-->
 
   <a-entity position="0 .6 3">
-    <a-camera camera wasd-controls-enabled="false" class="camera">
-      <a-entity raycaster="far: 1; objects: .intersectable" cursor="fuse: true; fuseTimeout: 500"
+    <a-camera camera wasd-controls-enabled="false" class="camera" collider-check>
+      <a-entity raycaster="far: .3; objects: .collidable" cursor="fuse: true; fuseTimeout: 100"
                 position="0 0 -0.75"></a-entity>
 
-      <a-animation begin="click" easing="ease-in" attribute="scale"
-                   fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-      <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
-                   fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+      <!--<a-animation begin="click" easing="ease-in" attribute="scale"-->
+                   <!--fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>-->
+      <!--<a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"-->
+                   <!--fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>-->
     </a-camera>
   </a-entity>
 
@@ -124,7 +124,7 @@
 
   <!--Door-->
 
-  <a-image id="cave-exit" class="cave-exit intersectable" cursor-listener src="#cave-exit" position="0 2 10"
+  <a-image id="cave-exit" class="cave-exit collidable" cursor-listener src="#cave-exit" position="0 2 10"
            rotation="0 -180 0"
            visible="false" onclick="location.href='/Platos-Cave/reality.html'">
     <!--<a-animation begin="raycaster-intersected" attribute="position" from="0 1.5 6" to="0 1.5 6" dur="2000" fill="both"></a-animation>-->

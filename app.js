@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+  AFRAME.registerComponent('collider-check', {
+    dependencies: ['raycaster'],
+    init: function () {
+      this.el.addEventListener('raycaster-intersected', function () {
+        console.log('Player hit something!');
+      });
+    }
+  });
+
 //For slide1
   function showSlide1() {
     $(".logo").attr('visible', 'false');
